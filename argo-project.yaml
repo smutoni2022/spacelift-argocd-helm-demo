@@ -5,13 +5,14 @@ metadata:
   namespace: default
 spec:
   project: default
-  source:
-    repoURL: https://github.com/smutoni2022/spacelift-argocd-helm-demo
+  sources:
+  - repoURL: https://github.com/smutoni2022/spacelift-argocd-helm-demo
     targetRevision: HEAD
     path: demo-app
     helm:
-      values: |
-        replicaCount: 3
+  - repoURL: https://github.com/smutoni2022/valuefiles.git
+    targetRevision: HEAD
+    ref: values
   destination:
     server: https://kubernetes.default.svc
     namespace: demo-app
