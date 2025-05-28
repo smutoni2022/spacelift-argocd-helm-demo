@@ -11,10 +11,7 @@ spec:
     path: demo-app
     helm:
       valueFiles:
-        - $values/values.yaml 
-  - repoURL: https://github.com/smutoni2022/valuefiles.git
-    targetRevision: HEAD
-    ref: values
+        - values-production.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: demo-app
