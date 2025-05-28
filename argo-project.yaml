@@ -9,6 +9,9 @@ spec:
   - repoURL: https://github.com/smutoni2022/spacelift-argocd-helm-demo
     targetRevision: HEAD
     path: demo-app
+    helm:
+      valueFiles:
+        - $values/values.yaml 
   - repoURL: https://github.com/smutoni2022/valuefiles.git
     targetRevision: HEAD
     ref: values
