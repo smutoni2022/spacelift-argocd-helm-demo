@@ -1,5 +1,4 @@
-apiVers
-ion: argoproj.io/v1alpha1
+apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: demo-app
@@ -11,11 +10,8 @@ spec:
     targetRevision: HEAD
     path: demo-app
     helm:
-      valueFiles:
-        - $values/charts/demo-app/values.yaml
-      repoURL: 'https://github.com/smutoni2022/value-files.git
-      targetRevision: HEAD 
-      ref: values 
+      values: |
+        replicaCount: 3
   destination:
     server: https://kubernetes.default.svc
     namespace: demo-app
